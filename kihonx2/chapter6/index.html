@@ -24,25 +24,25 @@
         </div>
     </div>
         <script>
-            var now = new Date();
-            var seconds = now.getSeconds();
-
-            if (seconds < 10){
-                seconds = '0' +seconds;
+            //ゼロを追加する
+            var addZero = function(value){
+                if(value<10){
+                    value = '0' + value;
+                }
+                return value;
             }
+
+            var now = new Date();   //Dateオブジェクトのインスタンスを作る
+            var seconds = now.getSeconds();//秒を取得する
+
+            seconds = addZero(seconds);
 
             //ここから追加・変更
             var minutes = now.getMinutes();
-
-            if (minutes < 10){
-                minutes = '0'+minutes;
-            }
+            minutes = addZero(minutes);
 
             var hours = now.getHours();
-
-            if (hours < 10){
-                hours ='0' + hours;
-            }
+            hours = addZero(hours);
 
             document.getElementById('timer').innerHTML = hours + ':' +minutes + ':' + seconds;
         </script>
