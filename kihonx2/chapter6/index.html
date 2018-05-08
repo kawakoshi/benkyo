@@ -32,19 +32,21 @@
                 return value;
             }
 
-            var now = new Date();   //Dateオブジェクトのインスタンスを作る
-            var seconds = now.getSeconds();//秒を取得する
+            document.getElementById('start_stop').addEventListener('click', function(){
+                var now = new Date();   //Dateオブジェクトのインスタンスを作る
+                var seconds = now.getSeconds();//秒を取得する
 
-            seconds = addZero(seconds);
+                seconds = addZero(seconds);
 
-            //ここから追加・変更
-            var minutes = now.getMinutes();
-            minutes = addZero(minutes);
+                //ここから追加・変更
+                var minutes = now.getMinutes();
+                minutes = addZero(minutes);
 
-            var hours = now.getHours();
-            hours = addZero(hours);
+                var hours = now.getHours();
+                hours = addZero(hours);
 
-            document.getElementById('timer').innerHTML = hours + ':' +minutes + ':' + seconds;
+                document.getElementById('timer').innerHTML = hours + ':' +minutes + ':' + seconds;
+            });
         </script>
 </body>
 </html>
