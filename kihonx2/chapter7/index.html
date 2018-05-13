@@ -20,35 +20,10 @@
             </div>
 
         </div><!-- container -->
+        <script src="js/jquery.min.js"></script>
 
         <script>
-        var ajax = new XMLHttpRequest();
-        ajax.open( 'GET', 'https://h2o-space.com/htmlbook/images.php');
-        ajax.responseType = 'json';
-        ajax.send(null);
-
-        ajax.onreadystatechange = function(){
-            if(ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200){
-                for (var i=0; i<this.response.length; i++){
-                    var data = this.response[i];
-
-                    var img = document.createElement('img');
-                    img.setAttribute('src',data.path);
-
-                    var caption = document.createElement('div');
-                    caption.className = 'inner';
-                    caption.innerHTML = '<p>' + data.caption + '<span>' + data.name + '</span></p>';
-
-                    var div = document.createElement('div');
-                    div.className = 'photo',
-                    div.appendChild(img);
-                    div.appendChild(caption);
-
-                    document.getElementById('img_unit').appendChild(div);
-                }
-            }
-        };
+            $('#img_unit').html('ここに、画像リストが表示されます').css('margin-top', '100px');
         </script>
-
     </body>
 </html>
